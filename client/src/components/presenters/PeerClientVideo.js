@@ -5,13 +5,12 @@ import {setUpPeerClient, connectPeerClient, sendMeesagePeerClient} from '../../a
 import style from './PeerClientVideo.css';
 
 @connect(state => ({
-  
 }), {
   setUpPeerClient,
   connectPeerClient,
   sendMeesagePeerClient
 })
-@CSSModules(style, {allowMultiple: true})
+@CSSModules(style)
 export default class PeerClientVideo extends React.Component {
   constructor(props) {
     super(props);
@@ -45,8 +44,8 @@ export default class PeerClientVideo extends React.Component {
         <button onClick={::this.connect}>Connect</button><br/>
         <input type="text" value={this.state.message} onChange={(e) => this.changeMessage(e)}/>
         <button onClick={::this.sendMessage}>Send Meesage</button>
-        <div >
-          <video width="200" height="200" autoPlay ref={c => {this.myVideo = c} }></video>
+        <div>
+          <video styleName="my-video" autoPlay ref={c => {this.myVideo = c} }></video>
         </div>
         <div>
           <video width="300" height="300" autoPlay ref={c => {this.peerVideo = c}}></video>
