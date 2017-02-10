@@ -1,11 +1,11 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import PeerClientContainer from './containers/PeerClientContainer';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        Hello World
+        <PeerClientContainer />
       </div>
     );
   }

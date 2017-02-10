@@ -1,8 +1,8 @@
 var path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: './src/main.js',
-
 	output: {
 		path: path.join(__dirname, 'www'),
 		filename: 'bundle.js'
@@ -14,9 +14,10 @@ module.exports = {
 				loader: 'babel-loader',
 				exclude: /node_modules/,
 				query: {
-					presets: ['es2015', 'react', 'stage-0', 'stage-1', 'stage-2', 'stage-3']
+					presets: ['es2015', 'react', 'stage-0', 'stage-1', 'stage-2', 'stage-3'],
+					plugins: ['transform-decorators-legacy']
 				}
 			}
 		]
-	}
+	},
 };

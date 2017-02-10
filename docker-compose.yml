@@ -1,0 +1,30 @@
+version: '2'
+services:
+  peer_server_proxy_nginx:
+    image: danieldent/nginx-ssl-proxy
+    container_name: peer_server_proxy_nginx
+    restart: always
+    environment:
+      UPSTREAM: 127.0.0.1:11080
+      SERVERNAME: test.example.com
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./nginx/conf.d:/etc/nginx/conf.d"
+      - "./nginx/certs:/certs"
+      - "./client/www:/usr/share/nginx/html/client"
+    links:
+      - peer_server
+  
+  peer_server:
+    image: node:6-slim
+    container_name: peer_server
+    hostname: peer_server
+    env_file: ./server/.env
+    ports:
+      - "9000:9000"
+    volumes:
+      - "./server:/src"
+    working_dir: "/src"
+    command: ["sh", "-c", "npm install --silent --no-perm && npm start"]

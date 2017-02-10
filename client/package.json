@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && open ./www/index.html",
+    "start": "$(npm bin)/webpack --watch -d",
     "start:dev": "$(npm bin)/webpack --watch -d & $(npm bin)/browser-sync start --config bs-config.js",
     "build": "$(npm bin)/webpack",
     "xo": "cd ./src/; xo ; exit 0;",
@@ -71,6 +71,7 @@
     "enzyme": "^2.7.1",
     "eslint-config-xo-react": "^0.10.0",
     "eslint-plugin-react": "^6.9.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "mocha": "^3.2.0",
     "mocha-webpack": "^0.7.0",
     "redux-devtools": "^3.3.2",
@@ -117,5 +118,5 @@
         }
       }
     ]
-  }  
+  }
 }
