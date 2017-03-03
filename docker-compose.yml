@@ -23,7 +23,7 @@ services:
     hostname: peer_server
     env_file: ./server/.env
     ports:
-      - "9000:9000"
+      - "9030:9030"
     volumes:
       - "./server:/src"
     working_dir: "/src"

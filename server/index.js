@@ -5,7 +5,7 @@ const createIo = require('socket.io');
 const createPeerServer = require('peer').ExpressPeerServer;
 
 // Environment
-const port = 9000;
+const port = 9030;
 
 // Routes
 const app = express();
