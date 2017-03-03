@@ -7,8 +7,19 @@ export default class PeerClient {
   peerVideoElement = null;
   conn = null;
   username = 'test';
-  
+  socket = io();
+
   constructor() {
+    this.socket.on('connect', function (id) {
+      console.log('connected');
+    });
+    this.socket.on('connected', (id) => {
+      if (this.peerId != id) {
+        setTimeout(() => {
+          this.connect({targetPeerId : id});
+        }, 1500);
+      }
+    });
     this.peer = new Peer({
       host: 'localhost',
       port: 443,

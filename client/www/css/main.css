@@ -1,4 +1,10 @@
 .PeerClientVideo__my-video___3xSbh {
-  width : 100%;
-  height: 100%;
+  width : 50%;
+  height: auto;
 }
+
+.PeerClientVideo__peer-video___1b0mQ {
+  width : 50%;
+  height: auto;
+}
+/*# sourceMappingURL=main.css.map*/

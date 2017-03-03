@@ -46,9 +46,7 @@ export default class PeerClientVideo extends React.Component {
         <button onClick={::this.sendMessage}>Send Meesage</button>
         <div>
           <video styleName="my-video" autoPlay ref={c => {this.myVideo = c} }></video>
-        </div>
-        <div>
-          <video width="300" height="300" autoPlay ref={c => {this.peerVideo = c}}></video>
+          <video styleName="peer-video" autoPlay ref={c => {this.peerVideo = c}}></video>
         </div>
       </div>
     );

@@ -6,7 +6,7 @@ services:
     restart: always
     environment:
       UPSTREAM: 127.0.0.1:11080
-      SERVERNAME: test.example.com
+      SERVERNAME: localhost
     ports:
       - "80:80"
       - "443:443"
