@@ -37,10 +37,11 @@ peer_server               sh -c npm install --silent ...   Up      0.0.0.0:9030-
 peer_server_proxy_nginx   /init                            Up      0.0.0.0:443->443/tcp, 0.0.0.0:80->80/tcp
 ```
 
-You can access the localhost with SSL.
-And allow to access unsafe script.
-https://localhost/client/
+You can access the localhost with SSL and allow to access unsafe script.  
+https://localhost/client/  
 
+#### Demo Image
+![demo image](https://cloud.githubusercontent.com/assets/3645994/24042206/4ea3c44c-0b54-11e7-9b00-937793ceed4e.png)
 
 ## Contribute
 
