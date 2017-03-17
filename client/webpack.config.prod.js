@@ -43,7 +43,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"',
-        PEERJS_SERVER_DOMAIN: '"videochat.devalon.biz"'
+        PEERJS_SERVER_DOMAIN: '""'
       }
     })
   ],	
