@@ -32,13 +32,15 @@ make ps
 docker-compose -f docker-compose.yml -p video-chat-mokumoku ps
          Name                        Command               State                    Ports
 -----------------------------------------------------------------------------------------------------------
+peer_client               sh -c npm install --silent ...   Up
 peer_server               sh -c npm install --silent ...   Up      0.0.0.0:9030->9030/tcp
 peer_server_proxy_nginx   /init                            Up      0.0.0.0:443->443/tcp, 0.0.0.0:80->80/tcp
 ```
 
 You can access the localhost with SSL.
-
+And allow to access unsafe script.
 https://localhost/client/
+
 
 ## Contribute
 
