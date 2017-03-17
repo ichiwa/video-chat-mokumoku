@@ -16,7 +16,7 @@ services:
       - "./client/www:/usr/share/nginx/html/client"
     links:
       - peer_server
-  
+
   peer_server:
     image: node:6-slim
     container_name: peer_server
@@ -27,4 +27,13 @@ services:
     volumes:
       - "./server:/src"
     working_dir: "/src"
-    command: ["sh", "-c", "npm install --silent --no-perm && npm start"]
+    command: ["sh", "-c", "npm install --silent --no-perm && npm run start"]
+
+  peer_client:
+    image: node:6-slim
+    container_name: peer_client
+    volumes:
+      - "./client:/src"
+    working_dir: "/src"
+    command: ["sh", "-c", "npm install --silent --no-perm && npm run start"]
+

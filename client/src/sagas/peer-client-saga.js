@@ -1,10 +1,11 @@
 import {takeEvery, delay} from 'redux-saga';
-import {select, put} from 'redux-saga/effects';
+import {select, put, call} from 'redux-saga/effects';
 import * as actions from '../actions';
 
 function * setupEventHandler(data) {
   const client = yield select(state => state.peerClientReducer.client);
   const ret = yield client.setup(data.payload);
+  yield call(delay, 1000);
   yield put(actions.setUpSuccessedPeerClient());
 }
 

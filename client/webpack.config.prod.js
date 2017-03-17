@@ -10,9 +10,6 @@ module.exports = {
     path: path.join(__dirname, 'www'),
     filename: 'bundle.js'
   },
-  watchOptions: {
-    poll: true
-  },
   resolve: {
     extensions: ['', '.js'],
     root: [ path.resolve(__dirname, './src/js') ],
@@ -45,8 +42,8 @@ module.exports = {
     new ExtractTextPlugin('css/main.css', {allChunks: true, disable: false}),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"development"',
-        PEERJS_SERVER_DOMAIN: '"localhost"'
+        NODE_ENV: '"production"',
+        PEERJS_SERVER_DOMAIN: '"videochat.devalon.biz"'
       }
     })
   ],	

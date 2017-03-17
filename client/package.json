@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "$(npm bin)/webpack --watch -d",
+    "start": "$(npm bin)/webpack --watch",
     "start:dev": "$(npm bin)/webpack --watch -d & $(npm bin)/browser-sync start --config bs-config.js",
     "build": "$(npm bin)/webpack",
+    "build:prod": "$(npm bin)/webpack --config webpack.config.prod.js",
     "xo": "cd ./src/; xo ; exit 0;",
     "xo:fix": "cd ./src/; xo --fix; exit 0;"
   },

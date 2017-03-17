@@ -40,10 +40,6 @@ export default class PeerClientVideo extends React.Component {
     return (
       <div>
         <p>Your peer ID : {this.props.peerClient.peerId}</p>
-        <input type="text" value={this.state.targetPeerId} onChange={(e) => this.changeTargetPeerId(e)}/>
-        <button onClick={::this.connect}>Connect</button><br/>
-        <input type="text" value={this.state.message} onChange={(e) => this.changeMessage(e)}/>
-        <button onClick={::this.sendMessage}>Send Meesage</button>
         <div>
           <video styleName="my-video" autoPlay ref={c => {this.myVideo = c} }></video>
           <video styleName="peer-video" autoPlay ref={c => {this.peerVideo = c}}></video>

@@ -21,7 +21,7 @@ export default class PeerClient {
       }
     });
     this.peer = new Peer({
-      host: 'localhost',
+      host: process.env.PEERJS_SERVER_DOMAIN,
       port: 443,
       path: '/peerjs',
       debug: 3,
@@ -69,7 +69,6 @@ export default class PeerClient {
       'username': this.username
     }});
     this.conn.on('data', this.handleMessages);
-    console.log("called");
     const call = this.peer.call(peerId, window.localStream);
     call.on('stream', (stream) => {
       window.peer_stream = stream;
